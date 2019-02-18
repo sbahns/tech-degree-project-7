@@ -1,0 +1,41 @@
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Buttons
+
+%btn {
+  width: 100%;
+  padding: 10px 45px;
+  border: 0;
+  border-radius: 5px;
+  color: $white;
+  text-transform: uppercase;
+}
+
+// Center alignment
+
+%center-align {
+	text-align: center;
+}
+
+//rounded grid-column styles
+%rounded_col {
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin-bottom: 6px;
+	@media (min-width: breakpoint(medium)) {
+		text-align: center;
+	}
+}
+
+.centered {
+	float: none  !important;
+	margin: 0 auto;
+}

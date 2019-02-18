@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Web App Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+
+	<body class="container">
+		<header>
+			<div class="logo">
+				<h1>YourApp</h1>
+			</div>
+			<div class="user-notifications">
+				<img src="images/icons/icon-bell.svg" />
+			</div>
+			<div class="user">
+				<img src="images/member-1.jpg" />
+			</div>
+
+		</header>
+		<nav>
+					<!--Dashboard-->
+					<img src="images/icons/icon-dashboard.svg" />
+
+					<!--User Profile-->
+					<img src="images/icons/icon-members.svg" />
+
+					<!--Reports-->
+					<img src="images/icons/icon-visits.svg" />
+
+					<!--Settings-->
+					<img src="images/icons/icon-settings.svg" />
+
+		</nav>
+		<main>
+			<div class="tab">
+				<div class="heading">
+					<h2>Dashboard</h2>
+				</div>
+				<div class="search">
+					<input type="text" placeholder="Search" />
+				</div>
+				<div class="notice">
+					<div class="alert">
+						<span class="closebtn">×</span>
+						<h3 class="notice-type">Alert</h3> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					</div>
+				</div>
+			</div>
+			<div class="module traffic border-bottom">
+				<h3>Traffic Overview</h3>
+				<div class="chart-container">
+					<canvas id="trafficOverview"></canvas>
+				</div>
+			</div>
+			<div class="module daily">
+				<h3>Daily Traffic</h3>
+				<div class="chart-container">
+					<canvas id="dailyTraffic"></canvas>
+				</div>
+			</div>
+			<div class="module mobile">
+				<h3>Mobile Users</h3>
+				<div class="chart-container">
+					<canvas id="mobileUsers"></canvas>
+				</div>
+			</div>
+			<div class="module social border-top border-bottom">
+				<h3>Social Stats</h3>
+				<!-- <div class="submodule">
+					Twitter
+				</div>
+				<div class="submodule">
+					Twitter
+				</div>
+				<div class="submodule">
+					Google+
+				</div> -->
+			</div>
+			<div class="module new-members">
+				<h3>New Members</h3>
+					Victoria Chambers
+					Dale Byrd
+					Dawn Wood
+					Dan Oliver
+			</div>
+			<div class="module recent-activity">
+				<h3>Recent Activity</h3>
+					Victoria Chambers commented on YourApp's SEO Tips >
+					Dale Byrd liked the post Facebook's Changes for 2016 >
+					Dawn Wood commented on Facebook's Changes for 2016 >
+					Dan Oliver posted YourApp's SEO Tips >
+			</div>
+			<div class="module message">
+				<h3>Message User</h3>
+					Search for User
+					Message for User
+			</div>
+			<div class="module settings">
+				<h3>Settings</h3>
+					Send Email Notifications
+					Set Profile to Public
+
+					Select Timezone
+			</div>
+
+		</main>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		<script src="js/dashboard-charts.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+
+</html>

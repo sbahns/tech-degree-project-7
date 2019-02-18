@@ -1,0 +1,18 @@
+//Forms:
+.search {
+	input {
+			display: block;
+	    padding: 10px;
+	    width: 100%;
+			max-width: 380px;
+	    font-weight: normal;
+	    margin: 13px auto 13px;
+			border-radius: 5px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: $grey;
+			@media (min-width: 768px) {
+				float: right;
+			}
+		}
+}

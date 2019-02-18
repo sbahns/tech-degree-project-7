@@ -1,0 +1,77 @@
+.tab {
+
+}
+
+.alert {
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-top: 25px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: $lavender;
+	color: $white;
+
+	.closebtn {
+	    padding-left: 15px;
+	    color: white;
+	    font-weight: bold;
+	    float: right;
+	    font-size: 20px;
+	    line-height: 1;
+	    cursor: pointer;
+	    transition: 0.3s;
+	}
+}
+
+.module {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-right: 30px;
+	padding-left: 30px;
+	&.mobile,
+	&.recent-activity,
+	&.message,
+	&.settings {
+		border-top: 1px solid $grey;
+	}
+	@media (min-width: 768px){
+		&.mobile,
+		&.recent-activity {
+			border-top: none;
+			border-left: 1px solid $grey;
+		}
+		&.settings {
+			border-left: 1px solid $grey;
+		}
+	}
+}
+
+.tab {
+	.heading {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+	.search {
+		background-color: #fbfbfb;
+		border-bottom: 1px solid $grey;
+		border-left: 1px solid $grey;
+		padding-right: 30px;
+	}
+}
+
+.submodule {
+	border: 1px solid $grey;
+	border-radius: 5px;
+	padding: 30px;
+}
+
+.border-bottom {
+	border-bottom: 1px solid $grey;
+}
+.border-top {
+	border-top: 1px solid $grey;
+}
+
+.chart-container {
+	height: 300px;
+}

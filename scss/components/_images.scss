@@ -1,0 +1,39 @@
+//Image:
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+header{
+	img[src$=".svg"] {
+		max-width: 32px;
+		margin: auto;
+	}
+}
+nav{
+	img[src$=".svg"] {
+		max-width: 32px;
+		margin: auto;
+
+		@media (min-width: 768px) {
+			margin: 30px auto;
+		}
+	}
+}
+
+g {
+	max-width: 50px;
+}
+
+.user-notifications, .user {
+	img {
+		margin: 0 auto;
+		max-width: 30px;
+	}
+}
+.user {
+	img {
+		border-radius: 20px;
+	}
+}
