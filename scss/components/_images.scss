@@ -10,6 +10,17 @@ header{
 		max-width: 32px;
 		margin: auto;
 	}
+	.user-notifications, .avatar {
+		img {
+			margin: 0 auto;
+			max-width: 30px;
+		}
+	}
+	.avatar {
+		img {
+			border-radius: 50%;
+		}
+	}
 }
 nav{
 	img[src$=".svg"] {
@@ -22,18 +33,67 @@ nav{
 	}
 }
 
-g {
-	max-width: 50px;
-}
-
-.user-notifications, .user {
-	img {
-		margin: 0 auto;
-		max-width: 30px;
+.social{
+	.submodule {
+		.social-icon {
+				background: $lavender;
+				width: 70px;
+		    	height: 70px;
+		    	border-radius: 50%;
+		    	margin: 0 15px 0 0;
+		    	position: relative;
+		    	display: inline-block;
+			.icon{
+				position: absolute;
+				&.facebook {
+					width: 20px;
+					height: 32px;
+					top: 1.15em;
+					left: 1.6em;
+				}
+				&.twitter {
+					width: 33px;
+					height: 37px;
+					top: 1.25em;
+					left: 1.25em;
+				}
+				&.google {
+					width: 30px;
+					height: 30px;
+					top: 1.25em;
+					left: 1.25em;
+				}
+				path{
+					fill: $white;
+				}
+			}
+		}
 	}
 }
-.user {
-	img {
-		border-radius: 20px;
+
+.new-members {
+	.member-list {
+		.member {
+		 	.avatar {
+				img {
+					margin: 0 auto;
+					max-width: 40px;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+}
+.recent-activity {
+	.activity-list {
+		.member {
+		 	.avatar {
+				img {
+					margin: 0 auto;
+					max-width: 40px;
+					border-radius: 50%;
+				}
+			}
+		}
 	}
 }

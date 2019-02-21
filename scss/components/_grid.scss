@@ -70,7 +70,26 @@ main {
 		.traffic {grid-area: traffic;}
 		.daily {grid-area: daily;}
 		.mobile {grid-area: mobile;}
-		.social {grid-area: social;}
+		.social {
+			grid-area: social;
+			.submodule-container {
+				display: flex;
+				flex-direction: row;
+				justify-content:center;
+				align-items: center;
+				.submodule {
+					flex: auto;
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					margin-right: 35px;
+					width: 33.3%;
+					&:last-child{
+						margin-right: 0;
+					}
+				}
+			}
+		}
 		.new-members {grid-area: new-members;}
 		.recent-activity {grid-area: recent-activity;}
 		.message {grid-area: message;}
