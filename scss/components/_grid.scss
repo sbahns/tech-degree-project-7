@@ -18,7 +18,7 @@ header {
 	grid-area: header;
 	align-items: center;
 	display: grid;
-	grid-template-columns: 2fr 1fr 1fr;
+	grid-template-columns: 3fr 1fr;
 
 }
 
@@ -28,7 +28,7 @@ nav {
 	grid-area: nav;
 
 	display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 main {
@@ -48,11 +48,14 @@ main {
       "nav main";
   }
 	nav {
-	  grid-template-columns: 1fr;
-		grid-auto-rows: 100px;
+	  grid-template-columns: minmax(70px, auto);
+	  grid-auto-rows: 100px;
 	}
 	main {
-		grid-template-rows: 150px minmax(150px, auto);
+		grid-template-rows: 70px minmax(150px, auto);
+		&.show-alert {
+			grid-template-rows: 150px minmax(150px, auto);
+		}
 		.tab {
 			grid-area: tab;
 
@@ -92,8 +95,16 @@ main {
 		}
 		.new-members {grid-area: new-members;}
 		.recent-activity {grid-area: recent-activity;}
-		.message {grid-area: message;}
-		.settings {grid-area: settings;}
+		.message {
+			grid-area: message;
+			display: flex;
+    		flex-direction: column;
+		}
+		.settings {
+			grid-area: settings;
+			display: flex;
+    	flex-direction: column;
+		}
 
 		grid-template-columns: 50% 50%;
 		grid-template-areas:

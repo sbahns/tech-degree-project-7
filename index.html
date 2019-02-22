@@ -10,32 +10,42 @@
 	<body class="container">
 		<header>
 			<div class="logo">
-				<h1>YourApp</h1>
+				<h1><span class="bold">Your</span>App&trade;</h1>
 			</div>
-			<div class="user-notifications">
-				<img src="images/icons/icon-bell.svg" />
-			</div>
-			<div class="avatar">
-				<img src="images/member-1.jpg" />
+			<div class="user-header">
+				<div class="user-notifications">
+					<img src="images/icons/icon-bell.svg" />
+				</div>
+				<div class="avatar">
+					<img src="images/member-1.jpg" />
+				</div>
+				<div class="user">
+					<div class="name">Victoria Chambers</div>
+				</div>
 			</div>
 
 		</header>
 		<nav>
-					<!--Dashboard-->
-					<img src="images/icons/icon-dashboard.svg" />
-
-					<!--User Profile-->
-					<img src="images/icons/icon-members.svg" />
-
-					<!--Reports-->
-					<img src="images/icons/icon-visits.svg" />
-
-					<!--Settings-->
-					<img src="images/icons/icon-settings.svg" />
-
+			<div class="nav--dashboard">
+				<!--Dashboard-->
+				<img src="images/icons/icon-dashboard.svg" />
+			</div>
+			<div class="nav--members">
+				<!--User Profile-->
+				<img src="images/icons/icon-members.svg" />
+			</div>
+			<div class="nav--visits">
+				<!--Reports-->
+				<img src="images/icons/icon-visits.svg" />
+			</div>
+			<div class="nav--settings">
+				<!--Settings-->
+				<img src="images/icons/icon-settings.svg" />
+			</div>
 		</nav>
+
 		<main>
-			<div class="tab">
+			<div class="tab toggle">
 				<div class="heading">
 					<h2>Dashboard</h2>
 				</div>
@@ -202,7 +212,9 @@
 					<form>
 						<input type="text" placeholder="Search for User" />
 						<textarea placeholder="Message for User"></textarea>
-						<button class="send">Send</button>
+						<div class="button-container">
+							<button class="send">Send</button>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -236,9 +248,10 @@
 							</option>
 						</select>
 					</div>
-
-					<button class="save">Save</button>
-					<button class="cancel">Cancel</button>
+					<div class="button-container">
+						<button class="save">Save</button>
+						<button class="cancel">Cancel</button>
+					</div>
 				</form>
 			</div>
 

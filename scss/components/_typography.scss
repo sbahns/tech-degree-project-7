@@ -13,7 +13,7 @@ header, nav {
 h1 {
     margin: 0;
     font-size: 24px;
-		font-weight: normal;
+	font-weight: normal;
 }
 h2 {
 	font-size: em(20px);
@@ -36,6 +36,10 @@ i {
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+}
+
+.bold {
+	font-weight: bold;
 }
 
 .alert {

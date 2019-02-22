@@ -1,27 +1,47 @@
-.tab {
-
-}
-
-.alert {
-	margin-right: 30px;
-	margin-left: 30px;
-	margin-top: 25px;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: $lavender;
-	color: $white;
-
-	.closebtn {
-	    padding-left: 15px;
-	    color: white;
-	    font-weight: bold;
-	    float: right;
-	    font-size: 20px;
-	    line-height: 1;
-	    cursor: pointer;
-	    transition: 0.3s;
+header {
+	.user-header {
+		display: grid;
+		grid-template-columns: 50px 30px 2fr;
+		grid-gap: 10px;
+		.user-notifications {
+			border-right: 1px solid #5d61bf;
+		}
+		.avatar {
+		}
+		.user {
+			//display: inline-block;
+		}
 	}
 }
+
+.notice{
+	display: block;
+	transition: all 1s ease-in-out;
+	&.hide {
+		display: none;
+	}
+	.alert {
+		margin-right: 30px;
+		margin-left: 30px;
+		margin-top: 25px;
+		padding: 10px;
+		border-radius: 5px;
+		background-color: $lavender;
+		color: $white;
+
+		.closebtn {
+		    padding-left: 15px;
+		    color: white;
+		    font-weight: bold;
+		    float: right;
+		    font-size: 20px;
+		    line-height: 1;
+		    cursor: pointer;
+		    transition: 0.3s;
+		}
+	}
+}
+
 
 .module {
 	padding-top: 30px;
@@ -99,7 +119,7 @@
 		padding-left: 30px;
 	}
 	.search {
-		background-color: #fbfbfb;
+		background-color: $off-white;
 		border-bottom: 1px solid $grey;
 		border-left: 1px solid $grey;
 		padding-right: 30px;
@@ -107,7 +127,7 @@
 }
 
 .submodule {
-	background-color: #fbfbfb;
+	background-color: $off-white;
 	border: 1px solid $grey;
 	border-radius: 5px;
 	padding: 20px;

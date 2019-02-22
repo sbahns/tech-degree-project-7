@@ -10,15 +10,17 @@ header{
 		max-width: 32px;
 		margin: auto;
 	}
-	.user-notifications, .avatar {
-		img {
+	.user-notifications {
+		img[src$=".svg"] {
 			margin: 0 auto;
 			max-width: 30px;
 		}
 	}
 	.avatar {
 		img {
+			margin: 0;
 			border-radius: 50%;
+			max-width: 30px;
 		}
 	}
 }
