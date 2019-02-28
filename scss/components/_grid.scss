@@ -18,17 +18,12 @@ header {
 	grid-area: header;
 	align-items: center;
 	display: grid;
-	grid-template-columns: 3fr 1fr;
-
+	grid-template-columns: 2fr 3fr;
 }
 
 nav {
-	padding:15px;
 	background-color: $purple;
 	grid-area: nav;
-
-	display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 main {
@@ -47,10 +42,11 @@ main {
       "header header"
       "nav main";
   }
-	nav {
-	  grid-template-columns: minmax(70px, auto);
-	  grid-auto-rows: 100px;
+
+	header {
+			grid-template-columns: 3fr 1fr;
 	}
+
 	main {
 		grid-template-rows: 70px minmax(150px, auto);
 		&.show-alert {
@@ -93,12 +89,20 @@ main {
 				}
 			}
 		}
-		.new-members {grid-area: new-members;}
-		.recent-activity {grid-area: recent-activity;}
+		.new-members {
+			grid-area: new-members;
+			display: flex;
+    	flex-direction: column;
+		}
+		.recent-activity {
+			grid-area: recent-activity;
+			display: flex;
+    	flex-direction: column;
+		}
 		.message {
 			grid-area: message;
 			display: flex;
-    		flex-direction: column;
+    	flex-direction: column;
 		}
 		.settings {
 			grid-area: settings;

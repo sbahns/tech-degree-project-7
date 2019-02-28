@@ -6,19 +6,39 @@ img {
 	display: block;
 }
 header{
-	img[src$=".svg"] {
-		max-width: 32px;
-		margin: auto;
-	}
 	.user-notifications {
-		img[src$=".svg"] {
+		display: flex;
+		flex-direction: column;
+	  svg.bell {
+			width: 20px;
 			margin: 0 auto;
-			max-width: 30px;
+			max-height: 20px;
+			fill: white;
+			transition: all 1s ease-in-out;
+			path {
+			 &.default {
+					visibility: visible;
+				}
+			 &.fill {
+					visibility: hidden;
+				}
+			}
+			&:hover, &.fill-bell {
+				pointer: cursor;
+				path {
+				 &.default {
+						visibility: hidden;
+					}
+				 &.fill {
+						visibility: visible;
+					}
+				}
+			}
 		}
 	}
 	.avatar {
 		img {
-			margin: 0;
+			margin: 0 10px 0 0;
 			border-radius: 50%;
 			max-width: 30px;
 		}
@@ -30,7 +50,7 @@ nav{
 		margin: auto;
 
 		@media (min-width: 768px) {
-			margin: 30px auto;
+			margin: auto;
 		}
 	}
 }
