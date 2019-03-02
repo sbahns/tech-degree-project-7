@@ -40,13 +40,17 @@
 
 		&:after, &:before {
 			bottom: 100%;
-			left: 100%;
+			left: 50%;
 			border: solid transparent;
 			content: " ";
 			height: 0;
 			width: 0;
 			position: absolute;
-			pointer-events: none;
+			//pointer-events: none;
+
+			@media (min-width: 768px){
+				left: 100%;
+			}
 		}
 
 		&:after {

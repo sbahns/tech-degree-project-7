@@ -39,7 +39,7 @@ function clearNotifications() {
 	emptylist.classList.toggle('clearlist');
 	clear.style.display = 'none';
 	dot.style.display = 'none';
-	dn.preventDefault();
+	//dn.preventDefault();
 };
 
 
@@ -52,41 +52,42 @@ clear.addEventListener('click', (e) => {
 	clearNotifications();
 });
 
+
 //Search
 
-var message = '';
-var user;
-var search;
-
-function print(message) {
-  var outputDiv = document.getElementById('output');
-  outputDiv.innerHTML = message;
-	search.appendChild(outputDiv);
-}
-
-function getUserReport( user ) {
-  var report = '<div><h4>User: ' + user.name + '</h4>';
-  report += '<p>Email: ' + user.email + '</p>';
-  report += '<p>Image: ' + user.avatar + '</p></div>';
-  return report;
-}
-
-function searchUsers() {
-	search = document.querySelector('#search');
-	for (var i = 0; i < users.length; i += 1) {
-	  user = users[i];
-	  if ( user.name === search ) {
-	    message = getUserReport( user );
-	    print(message);
-			console.log(message);
-	  }
-	}
-}
+// var message = '';
+// var user;
+// var search;
+//
+// function print(message) {
+//   var outputDiv = document.getElementById('output');
+//   outputDiv.innerHTML = message;
+// 	search.appendChild(outputDiv);
+// }
+//
+// function getUserReport( user ) {
+//   var report = '<div><h4>User: ' + user.name + '</h4>';
+//   report += '<p>Email: ' + user.email + '</p>';
+//   report += '<p>Image: ' + user.avatar + '</p></div>';
+//   return report;
+// }
+//
+// function searchUsers() {
+// 	search = document.querySelector('#search');
+// 	for (var i = 0; i < users.length; i += 1) {
+// 	  user = users[i];
+// 	  if ( user.name === search ) {
+// 	    message = getUserReport( user );
+// 	    print(message);
+// 			console.log(message);
+// 	  }
+// 	}
+// }
 
 const mglass = document.querySelector('.fa-search');
-mglass.addEventListener('click', (e) => {
-	searchUsers();
-});
+// mglass.addEventListener('click', (e) => {
+// 	searchUsers();
+// });
 
 
 //Message User
