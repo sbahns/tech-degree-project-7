@@ -1,10 +1,10 @@
 //Traffic Chart
 const canvas = document.querySelector('canvas');
 const traffic = document.querySelector('.traffic-filter');
-const hourly = document.querySelector('.hourly');
-const daily = document.querySelector('.daily');
-const weekly = document.querySelector('.weekly');
-const monthly = document.querySelector('.monthly');
+const hourly = document.querySelector('.hourlyt');
+const daily = document.querySelector('.dailyt');
+const weekly = document.querySelector('.weeklyt');
+const monthly = document.querySelector('.monthlyt');
 
 // Traffic Overview
 var chartData = {
@@ -48,11 +48,11 @@ var chartData4 = {
 	}]
 };
 
-var dataSource = chartData;
+
 var context = document.querySelector('#trafficOverview').getContext('2d');
 var chartParams = {
 	type: 'line',
-	data: dataSource,
+	data: chartData,
 	options: {
 		responsive: true,
 		maintainAspectRatio: false,
@@ -78,50 +78,226 @@ var chartParams = {
 };
 var myLineChart = new Chart(context, chartParams);
 
+
+function switchCharts(chartName) {
+		myLineChart.destroy();
+		chartName.classList.add('active');
+		myLineChart = new Chart(context, chartParams);
+}
+
 hourly.addEventListener('click', (e) => {
-	myLineChart.destroy();
-	var context1 = document.querySelector('#trafficOverview').getContext('2d');
-	dataSource = chartData1;
-	myLineChart = new Chart(context1, chartParams);
-	if (e.target) {
-		hourly.classList.add('active');
-	} else {
-		hourly.classList.remove('active');
-	}
+	chartData = {
+		labels: ["6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00"],
+		datasets: [{
+			backgroundColor: 'rgba(116, 120, 191, .5)',
+			borderColor: 'rgba(116, 120, 191, 1)',
+			data: [450, 1050, 700, 1700, 1600, 2500, 2750, 2250, 2750, 2250, 1750, 2250],
+		}]
+	};
+	chartParams = {
+		type: 'line',
+		data: chartData,
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			elements: {
+		      line: {
+		        tension: 0,
+		      }
+		  	},
+		    scales: {
+		         yAxes: [{
+		             ticks: {
+		                 beginAtZero:true
+		             }
+		         }]
+		     },
+		     legend: {
+		            display: false
+		         },
+		         tooltips: {
+		            enabled: false
+		         },
+			}
+	};
+	daily.classList.remove('active');
+	weekly.classList.remove('active');
+	monthly.classList.remove('active');
+	switchCharts(hourly);
 });
 daily.addEventListener('click', (e) => {
-	myLineChart.destroy();
-	var context2 = document.querySelector('#trafficOverview').getContext('2d');
-	dataSource = chartData2;
-	myLineChart = new Chart(context2, chartParams);
-	if (e.target) {
-		daily.classList.add('active');
-	} else {
-		daily.classList.remove('active');
-	}
+	chartData = {
+		labels: ["M", "Tu", "W", "Th", "F", "Sa", "Su"],
+		datasets: [{
+			backgroundColor: 'rgba(116, 120, 191, .5)',
+			borderColor: 'rgba(116, 120, 191, 1)',
+			data: [250, 750, 600, 2700, 610, 200, 2150],
+		}]
+	};
+	chartParams = {
+		type: 'line',
+		data: chartData,
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			elements: {
+		      line: {
+		        tension: 0,
+		      }
+		  	},
+		    scales: {
+		         yAxes: [{
+		             ticks: {
+		                 beginAtZero:true
+		             }
+		         }]
+		     },
+		     legend: {
+		            display: false
+		         },
+		         tooltips: {
+		            enabled: false
+		         },
+			}
+	};
+	hourly.classList.remove('active');
+	weekly.classList.remove('active');
+	monthly.classList.remove('active');
+	switchCharts(daily);
 });
 weekly.addEventListener('click', (e) => {
-	myLineChart.destroy();
-	var context3 = document.querySelector('#trafficOverview').getContext('2d');
-	dataSource = chartData3;
-    myLineChart = new Chart(context3, chartParams);
-	if (e.target === 'weekly') {
-		weekly.classList.add('active');
-	} else {
-		weekly.classList.remove('active');
-	}
+	chartData = {
+		labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+		datasets: [{
+			backgroundColor: 'rgba(116, 120, 191, .5)',
+			borderColor: 'rgba(116, 120, 191, 1)',
+			data: [150, 250, 300, 500, 800, 100, 1850, 1900, 750, 250, 950, 300],
+		}]
+	};
+	chartParams = {
+		type: 'line',
+		data: chartData,
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			elements: {
+		      line: {
+		        tension: 0,
+		      }
+		  	},
+		    scales: {
+		         yAxes: [{
+		             ticks: {
+		                 beginAtZero:true
+		             }
+		         }]
+		     },
+		     legend: {
+		            display: false
+		         },
+		         tooltips: {
+		            enabled: false
+		         },
+			}
+	};
+	hourly.classList.remove('active');
+	daily.classList.remove('active');
+	monthly.classList.remove('active');
+	switchCharts(weekly);
 });
 monthly.addEventListener('click', (e) => {
-	myLineChart.destroy();
-	var context4 = document.querySelector('#trafficOverview').getContext('2d');
-	dataSource = chartData4;
-	myLineChart = new Chart(context4, chartParams);
-	if (e.target === 'monthly') {
-		monthly.classList.add('active');
-	} else {
-		monthly.classList.remove('active');
-	}
+	chartData = {
+		labels: ["Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+		datasets: [{
+			backgroundColor: 'rgba(116, 120, 191, .5)',
+			borderColor: 'rgba(116, 120, 191, 1)',
+			data: [700, 250, 100, 500, 200, 1500, 1000, 1250, 1750, 2050, 1650, 2550],
+		}]
+	};
+	chartParams = {
+		type: 'line',
+		data: chartData,
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			elements: {
+		      line: {
+		        tension: 0,
+		      }
+		  	},
+		    scales: {
+		         yAxes: [{
+		             ticks: {
+		                 beginAtZero:true
+		             }
+		         }]
+		     },
+		     legend: {
+		            display: false
+		         },
+		         tooltips: {
+		            enabled: false
+		         },
+			}
+	};
+	hourly.classList.remove('active');
+	daily.classList.remove('active');
+	weekly.classList.remove('active');
+	switchCharts(monthly);
 });
+
+
+// traffic.addEventListener('click', (e) => {
+//
+// 	if (e.target === hourly){
+// 		console.log(this.className)           // logs the className of my_element
+// 		console.log(e.currentTarget === this) // logs `true`
+// 		myLineChart.destroy();
+// 		e.target.classList.add('active');
+// 		var context1 = document.querySelector('#trafficOverview').getContext('2d');
+// 		dataSource = chartData1;
+// 		myLineChart = new Chart(context1, chartParams);
+//   	} else {
+// 		e.target.classList.remove('active');
+// 	}
+//
+// 	if (e.target === daily){
+// 		console.log(this.className)           // logs the className of my_element
+// 		console.log(e.currentTarget === this) // logs `true`
+// 		myLineChart.destroy();
+// 		e.target.classList.add('active');
+// 		var context2 = document.querySelector('#trafficOverview').getContext('2d');
+// 		dataSource = chartData2;
+// 		myLineChart = new Chart(context2, chartParams);
+// 	} else {
+// 		e.target.classList.remove('active');
+// 	}
+//
+// 	if (e.target === weekly){
+// 		console.log(this.className)           // logs the className of my_element
+// 		console.log(e.currentTarget === this) // logs `true`
+// 		myLineChart.destroy();
+// 		e.target.classList.add('active');
+// 		var context3 = document.querySelector('#trafficOverview').getContext('2d');
+// 		dataSource = chartData3;
+// 	    myLineChart = new Chart(context3, chartParams);
+// 	} else {
+// 		e.target.classList.remove('active');
+// 	}
+//
+// 	if (e.target === monthly){
+// 		console.log(this.className)           // logs the className of my_element
+// 		console.log(e.currentTarget === this) // logs `true`
+// 		myLineChart.destroy();
+// 		monthly.classList.add('active');
+// 		var context4 = document.querySelector('#trafficOverview').getContext('2d');
+// 		dataSource = chartData4;
+// 		myLineChart = new Chart(context4, chartParams);
+// 	} else {
+// 		e.target.classList.remove('active');
+// 	}
+// });
+
 
 // var ctxm = document.getElementById('monthlyTrafficOverview').getContext('2d');
 // var chart = new Chart(ctxm, {
