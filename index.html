@@ -72,7 +72,7 @@
 					<h2>Dashboard</h2>
 				</div>
 				<div class="search">
-					<form autocomplete="off" id="searchForm" class="search-form">
+					<form autocomplete="off" id="searchFormTop" class="search-form">
 					<span class="fa fa-search" type="submit"></span>
           			<input type="text" class="form__input" id="searchBar" name="search" placeholder="Search" onfocus="this.placeholder=''" onblur="this.placeholder='Search'">
 	  			</form>
@@ -83,13 +83,6 @@
 						<h3 class="notice-type">Alert</h3> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 					</div>
 				</div>
-			</div>
-			<div class="module search-results border-bottom">
-				<div class="recent">
-			      <h2 class="recent-title">Recent Searches</h2>
-			      <button class="button" type="button" id="clearStorage">Clear Storage</button>
-			      <ul class="recent-list" id="recentSearchList"></ul>
-			    </div>
 			</div>
 			<div class="module traffic border-bottom">
 				<div class="traffic-header">
@@ -267,9 +260,12 @@
 			<div class="module message">
 				<h3>Message User</h3>
 				<div class="message">
-					<form>
-						<input type="text" placeholder="Search for User" class="search-user" />
-						<textarea placeholder="Message for User" class="message-user"></textarea>
+					<form id="message-user" autocomplete="off">
+					  <div class="autocomplete">
+					    <input id="myInput" type="text" name="search-user" placeholder="Search for User">
+					  </div>
+						<textarea id="textField" placeholder="Message for User" class="message-user"></textarea>
+
 						<div class="button-container">
 							<button class="send">Send</button>
 						</div>
@@ -282,7 +278,7 @@
 					<div class="setting">
 						<div class="label">Send Email Notifications</div>
 						<div class="switch">
-						    <input type="checkbox" name="switch1" class="switch-checkbox" id="toggle1" checked>
+						    <input type="checkbox" name="switch1" class="switch-checkbox" id="toggle1">
 						    <label class="switch-label" for="toggle1">
 						        <span class="switch-inner"></span>
 						        <span class="switch-toggle"></span>
@@ -292,14 +288,14 @@
 					<div class="setting">
 						<div class="label">Set Profile to Public</div>
 						<div class="switch">
-						    <input type="checkbox" name="switch2" class="switch-checkbox" id="toggle2" checked>
+						    <input type="checkbox" name="switch2" class="switch-checkbox" id="toggle2">
 						    <label class="switch-label" for="toggle2">
 						        <span class="switch-inner"></span>
 						        <span class="switch-toggle"></span>
 						    </label>
 						</div>
 					</div>
-					<div class="setting">
+					<div class="setting timezone-select" id="member-timezone">
 						<select>
 								<option value=”” disabled selected>Select Timezone</option>
 								<option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">(GMT-12:00) International Date Line West</option>
@@ -387,8 +383,8 @@
 							</select>
 					</div>
 					<div class="button-container">
-						<button class="save">Save</button>
-						<button class="cancel">Cancel</button>
+						<button class="save" onclick="save()">Save</button>
+						<button class="cancel" onclick="cancel()">Cancel</button>
 					</div>
 				</form>
 			</div>
@@ -397,9 +393,10 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<script src="js/dashboard-charts.js"></script>
+
 		<script src="js/app.js"></script>
-		<script src="js/search.js"></script>
-		<script src="js/users.js"></script>
+
+
 	</body>
 
 </html>
