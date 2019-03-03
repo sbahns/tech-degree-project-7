@@ -185,13 +185,19 @@ function save() {
     const toggle2 = document.getElementById('toggle2');
     localStorage.setItem('toggle2', toggle2.checked);
 
-		const mySel = document.getElementById("member-timezone");
+    const select = document.getElementById('member-timezone');
+		var selectOption = select.options[select.selectedIndex];
+		var lastSelected = localStorage.getItem('select');
 
-		  localStorage.setItem("selValue",this.value); // save it
+		if(lastSelected) {
+		    select.value = lastSelected;
+		}
 
-		let val = localStorage.getItem("selValue");
-		if (val) mySel.value=val; // set the dropdown
-		// trigger the change in case there are other events on the select
+		select.onchange = function () {
+		   lastSelected = select.options[select.selectedIndex].value;
+		   console.log(lastSelected);
+		   localStorage.setItem('select', lastSelected);
+		}
 
     alert('Your settings are saved');
 }
@@ -203,8 +209,8 @@ function load() {
     const toggle2 = JSON.parse(localStorage.getItem('toggle2'));
     document.getElementById('toggle2').checked = toggle2;
 
-    const mySel = JSON.parse(localStorage.getItem('member-timezone'));
-    document.getElementById('member-timezone').select = mySel;
+    const memberTimeZone = JSON.parse(localStorage.getItem('member-timezone'));
+    document.getElementById('member-timezone').select = memberTimeZone;
 }
 
 function cancel() {
