@@ -175,9 +175,6 @@ send.addEventListener('click', (e) => {
 
 //Local Storage
 
-
-
-
 function save() {
     const toggle1 = document.getElementById('toggle1');
     localStorage.setItem('toggle1', toggle1.checked);
@@ -185,9 +182,10 @@ function save() {
     const toggle2 = document.getElementById('toggle2');
     localStorage.setItem('toggle2', toggle2.checked);
 
+///TODO: get this timezone to save
     const select = document.getElementById('member-timezone');
-		var selectOption = select.options[select.selectedIndex];
-		var lastSelected = localStorage.getItem('select');
+		const selectOption = select.options[select.selectedIndex];
+		const lastSelected = localStorage.getItem('select');
 
 		if(lastSelected) {
 		    select.value = lastSelected;
