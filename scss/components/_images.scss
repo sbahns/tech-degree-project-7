@@ -14,23 +14,24 @@ header{
 			margin: 0 auto;
 			max-height: 20px;
 			fill: white;
-			transition: all 1s ease-in-out;
 			path {
+				transition-property: opacity;
+				transition-duration: 1s;
 			 &.default {
-					visibility: visible;
+					opacity: 1;
 				}
 			 &.fill {
-					visibility: hidden;
+					opacity: 0;
 				}
 			}
 			&:hover, &.fill-bell {
-				pointer: cursor;
+				cursor: pointer;
 				path {
 				 &.default {
-						visibility: hidden;
+						opacity: 0;
 					}
 				 &.fill {
-						visibility: visible;
+						opacity: 1;
 					}
 				}
 			}

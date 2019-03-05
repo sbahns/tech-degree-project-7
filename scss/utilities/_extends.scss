@@ -80,3 +80,11 @@
 	  -webkit-transform: rotate(-45deg);
 	}
 }
+
+
+@keyframes fadeshow {
+  0% { opacity: 0; }
+  10% { opacity: 0; }
+  15% { opacity: 1; }
+  100% { opacity: 1; }
+}

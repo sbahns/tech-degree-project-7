@@ -20,6 +20,17 @@ nav {
 }
 
 @media (min-width: 768px) {
+	nav {
+		ul {
+			li {
+				&.active, &:hover {
+	    		padding-bottom: 1.5%;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1024px) {
 
 	nav {
 		padding-top: 15px;

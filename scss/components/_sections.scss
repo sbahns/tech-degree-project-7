@@ -21,7 +21,7 @@ header {
 				border-radius: 50%;
 			}
 			&:hover {
-				pointer: cursor;
+				cursor: pointer;
 			}
 
 			.notification-list {
@@ -97,7 +97,7 @@ main {
 				.fa-search {
 				  position: absolute;
 				  top: 32%;
-			  	  right: 5%;
+			  	right: 7%;
 				  font-size: 15px;
 
 					&:hover {
@@ -105,7 +105,7 @@ main {
 					}
 				  @media (min-width: 768px){
 					  top: 27px;
-				  	  right: 1%;
+				  	right: 1%;
 				  }
 				}
 			}

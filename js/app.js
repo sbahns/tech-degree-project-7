@@ -184,18 +184,9 @@ function save() {
 
 ///TODO: get this timezone to save
     const select = document.getElementById('member-timezone');
-		const selectOption = select.options[select.selectedIndex];
-		const lastSelected = localStorage.getItem('select');
+		localStorage.setItem('select', select.selectedIndex);
 
-		if(lastSelected) {
-		    select.value = lastSelected;
-		}
 
-		select.onchange = function () {
-		   lastSelected = select.options[select.selectedIndex].value;
-		   console.log(lastSelected);
-		   localStorage.setItem('select', lastSelected);
-		}
 
     alert('Your settings are saved');
 }
@@ -207,8 +198,8 @@ function load() {
     const toggle2 = JSON.parse(localStorage.getItem('toggle2'));
     document.getElementById('toggle2').checked = toggle2;
 
-    const memberTimeZone = JSON.parse(localStorage.getItem('member-timezone'));
-    document.getElementById('member-timezone').select = memberTimeZone;
+    const memberTimeZone = JSON.parse(localStorage.getItem('select'));
+    document.getElementById('member-timezone').selectedIndex = memberTimeZone;
 }
 
 function cancel() {
