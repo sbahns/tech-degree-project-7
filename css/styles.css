@@ -857,7 +857,8 @@ button {
       -moz-user-select: none;
       -ms-user-select: none;
       display: block;
-      float: left; }
+      float: left;
+      margin-bottom: 5px; }
     .settings form .setting .switch-checkbox {
       display: none; }
     .settings form .setting .switch-label {

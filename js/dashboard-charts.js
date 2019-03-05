@@ -15,38 +15,38 @@ var chartData = {
 		data: [750, 1250, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750, 2250],
 	}]
 };
-var chartData1 = {
-	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-	datasets: [{
-		backgroundColor: 'rgba(116, 120, 191, .5)',
-		borderColor: 'rgba(116, 120, 191, 1)',
-		data: [450, 1050, 700, 1700, 1600, 2500, 2750, 2250, 2750, 2250, 1750, 2250],
-	}]
-};
-var chartData2 = {
-	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-	datasets: [{
-		backgroundColor: 'rgba(116, 120, 191, .5)',
-		borderColor: 'rgba(116, 120, 191, 1)',
-		data: [250, 750, 600, 2700, 610, 200, 2150, 2250, 850, 450, 1050, 1250],
-	}]
-};
-var chartData3 = {
-	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-	datasets: [{
-		backgroundColor: 'rgba(116, 120, 191, .5)',
-		borderColor: 'rgba(116, 120, 191, 1)',
-		data: [150, 250, 300, 500, 800, 100, 1850, 1900, 750, 250, 950, 300],
-	}]
-};
-var chartData4 = {
-	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-	datasets: [{
-		backgroundColor: 'rgba(116, 120, 191, .5)',
-		borderColor: 'rgba(116, 120, 191, 1)',
-		data: [700, 250, 100, 500, 200, 1500, 1000, 1250, 1750, 2050, 1650, 2550],
-	}]
-};
+// var chartData1 = {
+// 	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+// 	datasets: [{
+// 		backgroundColor: 'rgba(116, 120, 191, .5)',
+// 		borderColor: 'rgba(116, 120, 191, 1)',
+// 		data: [450, 1050, 700, 1700, 1600, 2500, 2750, 2250, 2750, 2250, 1750, 2250],
+// 	}]
+// };
+// var chartData2 = {
+// 	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+// 	datasets: [{
+// 		backgroundColor: 'rgba(116, 120, 191, .5)',
+// 		borderColor: 'rgba(116, 120, 191, 1)',
+// 		data: [250, 750, 600, 2700, 610, 200, 2150, 2250, 850, 450, 1050, 1250],
+// 	}]
+// };
+// var chartData3 = {
+// 	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+// 	datasets: [{
+// 		backgroundColor: 'rgba(116, 120, 191, .5)',
+// 		borderColor: 'rgba(116, 120, 191, 1)',
+// 		data: [750, 1250, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750, 2250],
+// 	}]
+// };
+// var chartData4 = {
+// 	labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
+// 	datasets: [{
+// 		backgroundColor: 'rgba(116, 120, 191, .5)',
+// 		borderColor: 'rgba(116, 120, 191, 1)',
+// 		data: [750, 1250, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750, 2250],
+// 	}]
+// };
 
 
 var context = document.querySelector('#trafficOverview').getContext('2d');
@@ -78,6 +78,7 @@ var chartParams = {
 };
 var myLineChart = new Chart(context, chartParams);
 
+window.onload = weekly.classList.add('active');
 
 function switchCharts(chartName) {
 		myLineChart.destroy();
@@ -171,7 +172,7 @@ weekly.addEventListener('click', (e) => {
 		datasets: [{
 			backgroundColor: 'rgba(116, 120, 191, .5)',
 			borderColor: 'rgba(116, 120, 191, 1)',
-			data: [150, 250, 300, 500, 800, 100, 1850, 1900, 750, 250, 950, 300],
+			data: [750, 1250, 1000, 1500, 2000, 1500, 1750, 1250, 1750, 2250, 1750, 2250],
 		}]
 	};
 	chartParams = {
@@ -246,102 +247,7 @@ monthly.addEventListener('click', (e) => {
 	switchCharts(monthly);
 });
 
-
-// traffic.addEventListener('click', (e) => {
-//
-// 	if (e.target === hourly){
-// 		console.log(this.className)           // logs the className of my_element
-// 		console.log(e.currentTarget === this) // logs `true`
-// 		myLineChart.destroy();
-// 		e.target.classList.add('active');
-// 		var context1 = document.querySelector('#trafficOverview').getContext('2d');
-// 		dataSource = chartData1;
-// 		myLineChart = new Chart(context1, chartParams);
-//   	} else {
-// 		e.target.classList.remove('active');
-// 	}
-//
-// 	if (e.target === daily){
-// 		console.log(this.className)           // logs the className of my_element
-// 		console.log(e.currentTarget === this) // logs `true`
-// 		myLineChart.destroy();
-// 		e.target.classList.add('active');
-// 		var context2 = document.querySelector('#trafficOverview').getContext('2d');
-// 		dataSource = chartData2;
-// 		myLineChart = new Chart(context2, chartParams);
-// 	} else {
-// 		e.target.classList.remove('active');
-// 	}
-//
-// 	if (e.target === weekly){
-// 		console.log(this.className)           // logs the className of my_element
-// 		console.log(e.currentTarget === this) // logs `true`
-// 		myLineChart.destroy();
-// 		e.target.classList.add('active');
-// 		var context3 = document.querySelector('#trafficOverview').getContext('2d');
-// 		dataSource = chartData3;
-// 	    myLineChart = new Chart(context3, chartParams);
-// 	} else {
-// 		e.target.classList.remove('active');
-// 	}
-//
-// 	if (e.target === monthly){
-// 		console.log(this.className)           // logs the className of my_element
-// 		console.log(e.currentTarget === this) // logs `true`
-// 		myLineChart.destroy();
-// 		monthly.classList.add('active');
-// 		var context4 = document.querySelector('#trafficOverview').getContext('2d');
-// 		dataSource = chartData4;
-// 		myLineChart = new Chart(context4, chartParams);
-// 	} else {
-// 		e.target.classList.remove('active');
-// 	}
-// });
-
-
-// var ctxm = document.getElementById('monthlyTrafficOverview').getContext('2d');
-// var chart = new Chart(ctxm, {
-// 	// The type of chart we want to create
-// 	type: 'line',
-//
-// 	// The data for our dataset
-// 	data: {
-// 		labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
-// 		datasets: [{
-// 			backgroundColor: 'rgba(116, 120, 191, .5)',
-// 			borderColor: 'rgba(116, 120, 191, 1)',
-// 			data: [450, 1050, 700, 1700, 1600, 2500, 2750, 2250, 2750, 2250, 1750, 2250],
-// 		}]
-// 	},
-//
-// 	// Configuration options go here
-// 	options: {
-// 		responsive: true,
-// 		maintainAspectRatio: false,
-// 		elements: {
-// 	      line: {
-// 	        tension: 0,
-// 	      }
-// 	  	},
-// 	    scales: {
-// 	         yAxes: [{
-// 	             ticks: {
-// 	                 beginAtZero:true
-// 	             }
-// 	         }]
-// 	     },
-// 	     legend: {
-// 	            display: false
-// 	         },
-// 	         tooltips: {
-// 	            enabled: false
-// 	         },
-// 		}
-// });
-
-//
 // Daily traffic
-
 var ctxdt = document.getElementById('dailyTraffic').getContext('2d');
 var chart = new Chart(ctxdt, {
 	// The type of chart we want to create
